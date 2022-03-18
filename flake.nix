@@ -7,6 +7,14 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
+  inputs."gapbuffer-master".dir   = "master";
+  inputs."gapbuffer-master".owner = "nim-nix-pkgs";
+  inputs."gapbuffer-master".ref   = "master";
+  inputs."gapbuffer-master".repo  = "gapbuffer";
+  inputs."gapbuffer-master".type  = "github";
+  inputs."gapbuffer-master".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."gapbuffer-master".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@inputs:
   let 
     lib  = flakeNimbleLib.lib;
